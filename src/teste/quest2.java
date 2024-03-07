@@ -9,33 +9,42 @@ public class quest2 {
 	    Scanner sc = new Scanner(System.in);
         
 	    System.out.println("Digite um número interio: ");
-	    int N = sc.nextInt();
-        int proximo = , anterior = 0, atual = 1;
-       
-       int fib[] = new int[N];
+	    int n = sc.nextInt();
+        int proximo, anterior = 0, atual = 1;
+        int cout = 0;
         
-        if(N == anterior) {
-        	fib[0]= anterior;
-        	System.out.println("O número " + N + "  pertence a sequencia de Fibonacci");
-        }else if(N== atual){
-        	fib[1]= atual;
-        	System.out.println("O número " + N + "  pertence a sequencia de Fibonacci");
-        }else if(N == proximo) {
-           		System.out.println("O número " + N + "  pertence a sequencia de Fibonacci");
-        	for (int i = 0; i < N; i++) {
-               	proximo = anterior + atual;
-            	anterior = atual;
-            	atual = proximo;
-               	fib[i+ 2]= proximo;
-               		
-               	}
-        	
-               		System.out.println("O número " + N + " não pertence a sequencia de Fibonacci");
-               	}
-            	
-        		
+        int fib[] = new int [(n+2)];
+        fib[0]= anterior;
+   		fib[1]= atual;
+   		
+   	
+   		 
+   			for (int i = 2; i <= n; i++) {
+         	
+         	
+         	proximo = anterior + atual;
+         	anterior = atual;
+         	atual = proximo;
+         	
+         	fib[i] = proximo;
+         }
+                		
+         for (int i = 0; i <= n; i++) {
+         	if(n == fib[i]) {
+         		cout = cout + 1;
+         	}
+          	
+         	}
+         
+         if(cout == 1) {
+         	System.out.println("o número " + n +" pertence a sequencia de Fibonacci");
+         }else
+         	System.out.println("o número " + n +" não pertence a sequencia de Fibonacci");
+        
+   		
 
+   		
         
-        sc.close();
+         sc.close();
  	}
 }
