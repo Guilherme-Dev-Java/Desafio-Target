@@ -1,26 +1,38 @@
 package teste;
 
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class quest5 {
 	
 	 public static void main(String args[]){
 		 
-         char [] palavra;
-         char [] palavraInvertida = new char [palavra.length];
+         Scanner sc = new Scanner(System.in);
          
-         int tamanhoPalavra = palavra.length;
+         String palavra;
          
+         System.out.println("Digite uma palavra: ");
+         palavra = sc.nextLine();
          
-         String frase = JOptionPane.showInputDialog(null, "Digite uma frase: ");
-         palavra = frase.toCharArray();
+         System.out.println();
          
-         for( int i = 0; i < palavra.length; i++) {
-        	 System.out.print(palavra[i]);
-         }
-         
-         
-     }
+         System.out.println("Palavra Digitada: " + palavra);
+         System.out.printf("Palavra Inversida: %s\n", inverterPlavara(palavra));
+      
+         sc.close();
  }
 
+	private static String inverterPlavara(String palavra) {
+		int n;
+		String pInvertda = "";
+		
+		n = palavra.length();
+		
+		for(int i = (n-1); i>=0; i--) {
+			pInvertda = pInvertda + palavra.charAt(i);
+		}
+		
+		
+		return (pInvertda);
+	}
 
+}
